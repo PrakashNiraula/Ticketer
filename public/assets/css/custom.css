@@ -1,0 +1,173 @@
+/* 
+.grid-container {
+  width: 280px;
+  height: 400px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    border-radius: 10;
+    gap: 5px 5px;
+    grid-template-areas:
+      "a1 a2 . b1 b2"
+      "a3 a4 . b3 b4"
+      "a5 a6 . b5 b6"
+      "a7 a8 . b7 b8"
+      "a9 a10 . b9 b10"
+      "a11 a12 . b11 b12"
+      "a13 a14 a15 b13 b14";
+  }
+  
+  .a1 { grid-area: a1; border-radius: 15;  }
+  
+  .a2 { grid-area: a2; }
+  
+  .a3 { grid-area: a3; }
+  
+  .a4 { grid-area: a4; }
+  
+  .a5 { grid-area: a5; }
+  
+  .a6 { grid-area: a6; }
+  
+  .a7 { grid-area: a7; }
+  
+  .a8 { grid-area: a8; }
+  
+  .a9 { grid-area: a9; }
+  
+  .a10 { grid-area: a10; }
+  
+  .a11 { grid-area: a11; }
+  
+  .a12 { grid-area: a12; }
+  
+  .a13 { grid-area: a13; }
+  
+  .a14 { grid-area: a14; }
+  
+  .a15 { grid-area: a15; }
+  
+  .b1 { grid-area: b1; }
+  
+  .b2 { grid-area: b2; }
+  
+  .b3 { grid-area: b3; }
+  
+  .b4 { grid-area: b4; }
+  
+  .b5 { grid-area: b5; }
+  
+  .b6 { grid-area: b6; }
+  
+  .b7 { grid-area: b7; }
+  
+  .b8 { grid-area: b8; }
+  
+  .b9 { grid-area: b9; }
+  
+  .b10 { grid-area: b10; }
+  
+  .b11 { grid-area: b11; }
+  
+  .b12 { grid-area: b12; }
+  
+  .b13 { grid-area: b13; }
+  
+  .b14 { grid-area: b14; }
+  
+  
+  /* For presentation only, no need to copy the code below */
+  /* .grid-container * {
+    border: 1px solid #1FB0AC;
+    position: relative;
+    border-radius: 10px;
+    padding: 1px;
+    }
+  
+  .grid-container *:after {
+    content:attr(class);
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+  
+  .empty{
+    background:#1FB0AC;
+  }
+  .filled{
+     background:#B01F1F;
+  } */
+
+
+  #app {
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .container {
+    width: 600px;
+    margin: auto;
+  }
+  
+  .grid td {
+    width: 80px;
+    height: 50px;
+    padding: 50px 30px;
+    border: 2px solid orange;
+    text-align: center;
+    float: left;
+    margin: 5px;
+  }
+  
+  .grid td:hover {
+    opacity: .7;
+    cursor: pointer;
+  }
+  
+  .reserved {
+    background: orange;
+    color: #fff;
+    display: inline-block;
+  }
+  
+  .reserved::after {
+    content: 'RESERVED'
+  }
+  
+  .available::after {
+    content: 'AVAILABLE'
+  }
+  
+  .available {
+    color: #333;
+  }
+  
+  li {
+    list-style: none;
+  }
+
+
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  .test{
+
+    background: rgba(31, 176, 172);
+   background-color: #1FB0AC;
+  color: #fff;
+   background-color: #1FB0AC;
+   background-color: #223167;
+  background-color: #B01F1F;
+   color: #9E9E9E;
+
+    background-color: #F5F5F5;
+   
+    background-color: #F5F5F5;
+ 
+
+  }
+  
