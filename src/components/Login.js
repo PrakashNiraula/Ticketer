@@ -22,16 +22,17 @@ export default class Login extends Component {
 
     handleSubmit=(e)=>{
         e.preventDefault();
-        Axios.post('http://localhost:3000/users/login',{username:this.state.username,password:this.state.password})
+        Axios.post('http://140.238.204.76:3005/user/userlogin',{username:this.state.username,password:this.state.password})
         .then(res=>{
-            localStorage.setItem('token',res.data.token);
-             var token = res.data.token.split(" ")[1];
-            var decoded = jwt_decode(token);
-            localStorage.setItem('id',decoded.id);
-            localStorage.setItem('fname',decoded.fname);
-            localStorage.setItem('role',decoded.role); 
-            this.setState({loggedStatus:true});
-            this.setState({role:decoded.role});
+            console.log(res);
+            // localStorage.setItem('token',res.data.token);
+            //  var token = res.data.token.split(" ")[1];
+            // var decoded = jwt_decode(token);
+            // localStorage.setItem('id',decoded.id);
+            // localStorage.setItem('fname',decoded.fname);
+            // localStorage.setItem('role',decoded.role); 
+            // this.setState({loggedStatus:true});
+            // this.setState({role:decoded.role});
         }).catch(err=>console.log(err))
     }
     
@@ -43,7 +44,7 @@ export default class Login extends Component {
             return <Redirect to='/user'/>
         }
         return (
-            <div class="slider-area">
+            <div className="slider-area">
     <main className="login-body" data-vide-bg="assets/img/login-bg.mp4">
        
         <form className="form-default">

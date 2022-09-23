@@ -10,14 +10,13 @@ constructor(props) {
     super(props)
 
     this.state = {
-         name:'',
-         address:'',
-         phone:'',
-         email:'',
-         username:'',
-         password:'',
-         role:'',
-         gotologin: false,
+         property_name:'',
+         price:'',
+         bed:'',
+         land:'',
+         category_id:'',
+         subcategory_id:'',
+         city_id:'',
          isregistered:false
         
     }
@@ -25,19 +24,19 @@ constructor(props) {
 
 handleChange=(e)=>this.setState({[e.target.name]:e.target.value})
 
-gotologin=(e)=>{
+gotoproperty=(e)=>{
     e.preventDefault();
-    this.setState({gotologin:true});
+    this.setState({gotoproperty:true});
    
 }
 
 handleSubmit=(e)=>{
     e.preventDefault();
    // console.log(this.state);
-   Axios.post('http://140.238.204.76:3005/user/createuser',this.state)
+   Axios.post('http://140.238.204.76:3005/property/createproperty',this.state)
    .then(res=>{
      console.log(res)
-   e.label = "You are registered successfully."
+   e.label = "You have registered property successfully."
   // this.setState({status:true});
      this.setState({isregistered:true});
    }).catch(err=>console.log(err))
@@ -46,14 +45,14 @@ handleSubmit=(e)=>{
 
     render() {
 
-        if(this.state.gotologin){
-            return <Redirect to='/login'/>
+        if(this.state.gotoproperty){
+            return <Redirect to='/property'/>
           }
       if(this.state.isregistered){
         return( <div>
 
             <label>Success</label>
-            <Button block onClick={this.gotologin}>Go to login</Button>
+            <Button block onClick={this.gotoproperty}>Go to property</Button>
         
         </div>
         
@@ -69,26 +68,26 @@ handleSubmit=(e)=>{
             
             <div className="login-form">
                
-                <h2>Register</h2>
+                <h2>Add Property</h2>
 
                 <div className="form-input">
-                    <label htmlFor="name">Name</label>
-                    <Input type="text" name="name" id="name" placeholder="" value={this.state.name} onChange={this.handleChange} />
+                    <label htmlFor="name">Property Name</label>
+                    <Input type="text" name="name" id="property_name" placeholder="" value={this.state.property_name} onChange={this.handleChange} />
                 </div>
 
                 <div className="form-input">
-                    <label htmlFor="address">Address</label>
-                    <Input type="text" name="address" id="address" placeholder="" value={this.state.address} onChange={this.handleChange} />
+                    <label htmlFor="price">Price</label>
+                    <Input type="text" name="price" id="price" placeholder="" value={this.state.price} onChange={this.handleChange} />
                 </div>
 
                 <div className="form-input">
-                    <label htmlFor="phone">Phone</label>
-                    <Input type="text" name="phone" id="phone" placeholder="" value={this.state.phone} onChange={this.handleChange} />
+                    <label htmlFor="bed">Bed</label>
+                    <Input type="text" name="bed" id="bed" placeholder="" value={this.state.bed} onChange={this.handleChange} />
                 </div>
 
                 <div className="form-input">
-                    <label htmlFor="email">Email</label>
-                    <Input type="text" name="email" id="email" placeholder="" value={this.state.email} onChange={this.handleChange} />
+                    <label htmlFor="land">Land</label>
+                    <Input type="text" name="land" id="land" placeholder="" value={this.state.land} onChange={this.handleChange} />
                 </div>
 
                 <div className="form-input">
